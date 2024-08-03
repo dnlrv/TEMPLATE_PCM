@@ -60,7 +60,7 @@ foreach ($script in $TEMPLATE_PCMScripts)
 
     # and dot source it
     . $scriptblock
-}
+}# foreach ($script in $TEMPLATE_PCMScripts)
 
 # setting our ScriptBlock ArrayList to global
 $global:TEMPLATE_PCMScriptBlocks = $TEMPLATE_PCMScriptBlocks
