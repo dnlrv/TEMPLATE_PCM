@@ -6,12 +6,13 @@
 $User = "dnlrv"
 $Repo = "TEMPLATE_PCM"
 
-# version check
+# version check if desired
+<#
 if ($PSVersionTable.PSVersion.ToString() -lt 7.4)
 {
 	Write-Error "PowerShell version 7.4+ required."
 	Exit 1
-}
+}#>
 
 # setting Url values
 $MainTreeUrl   = "https://api.github.com/repos/$User/$Repo/git/trees/main?recursive=1"
