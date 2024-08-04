@@ -6,6 +6,9 @@
 $User = "dnlrv"
 $Repo = "TEMPLATE_PCM"
 
+# enter in any files you definitely want ignored
+$FilesToIgnore = "LICENSE","README.md","TEMPLATE_PCM_local.ps1"
+
 # version check if desired
 <#
 if ($PSVersionTable.PSVersion.ToString() -lt 7.4)
@@ -24,9 +27,6 @@ $MainTree = Invoke-RestMethod -Method Get -Uri $MainTreeUrl
 # get the directories and files as separate lists
 $Directories = $MainTree.tree | Where-Object -Property type -eq tree | Select-Object -ExpandProperty path
 $Files       = $MainTree.tree | Where-Object -Property type -eq blob | Select-Object -ExpandProperty path
-
-# enter in any files you definitely want ignored
-$FilesToIgnore = "LICENSE","README.md","TEMPLATE_PCM_local.ps1"
 
 # removing the files specified above
 $FileUrlPaths = $Files | Where-Object {$FilesToIgnore -notcontains $_}
