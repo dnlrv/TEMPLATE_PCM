@@ -22,7 +22,7 @@ class TEMPLATE_PCMException
 		$this.ErroredOn = (Get-Date).ToString()
 
 		$global:LastTEMPLATE_PCMError = $this
-	}
+	}# TEMPLATE_PCMException([System.String]$m) 
 
 	addExceptionData([PSCustomObject]$e)
 	{

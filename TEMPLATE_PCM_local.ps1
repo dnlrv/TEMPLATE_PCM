@@ -36,7 +36,7 @@ foreach ($directory in $Directories)
 	
 	# add it to our script ArrayList
 	$TEMPLATE_PCMScripts.AddRange(@($folderscripts)) | Out-Null
-}
+}# foreach ($directory in $Directories)
 
 # for each script we found
 foreach ($script in $TEMPLATE_PCMScripts)
